@@ -1,5 +1,7 @@
 * {
 box-sizing: border-box;
+padding: 0;
+margin: 0;
 }
 @font-face {
 font-family: "flowers1";
@@ -22,28 +24,84 @@ font-family: "plants";
 src: url("fonts/PlantsAndFlowers.ttf") format("truetype");
 }
 body {
-text-align: center;
 background-color: rgb(191, 255, 191);
+position: relative;
 }
-#tab-page {
-margin: 20px auto;
-width: 40vw;
-height: 500px;
+img {
+width: 32vw;
+height: auto;
+margin: 10px 80px 10px 100px;
+opacity: 0.8;
+border-radius: 5px;
+border: 5px double rgb(98, 6, 98);
+outline: 5px double darkgreen;
+position: relative;
+top: 120px;
+left: 20px;
+}
+.tab-page {
+position: absolute;
+top: 90px;
+right: 20px;
+margin: 10px;
+width: 45vw;
+height: 380px;
 background: rgb(235, 250, 235) 0 0/100% 100% no-repeat;
 border-radius: 10px;
 padding: 10px 0px;
 font-family: "trees";
-font-size: 22px;
+font-size: 20px;
+text-align: center;
 border: 35px solid transparent;
 border-image: url('images/vine border.png') round;
 border-image-slice: 20% 15%;
 border-image-width: 30px;
 }
 h1 {
-margin: 10px auto 40px;
+margin: 5px auto 30px 60px;
 font-family: "plants";
-font-size: 80px;
+font-size: 70px;
 font-weight: normal;
 color: rgb(1, 77, 1);
+float: left;
 }
-
+nav {
+/*border: 2px solid darkgreen; */
+position: absolute;
+top: 45px;
+right: 37px;
+font-size: 22px;
+font-family: "trees";
+font-weight: bold;
+}
+li {
+line-height: 40px;
+list-style-type: none;
+display: inline;
+border: 5px solid rgb(56, 95, 56);
+padding: 10px 52px;
+background-color: rgb(115, 160, 115);
+color: rgb(37, 1, 37);
+margin: 0 -5px;
+}
+a {
+appearance: none;
+-webkit-appearance: none;
+text-decoration: none;
+}
+#banner {
+background-color: rgb(213, 173, 213);
+border-bottom: 6px solid purple;
+height: 95px;
+position: fixed;
+display: block;
+width: 100%;
+}
+#bottom-bar {
+background-color: rgb(213, 173, 213);
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 20px;
+border-top: 4px solid purple;
+}
