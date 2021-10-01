@@ -31,11 +31,13 @@ width: 40vw;
 height: 500px;
 background: rgb(235, 250, 235) 0 0/100% 100% no-repeat;
 border-radius: 10px;
-padding: 30px;
+padding: 10px 0px;
 font-family: "trees";
-font-size: 30px;
-border-image: url('images/vine border.png') 30 round;
-border: 40px solid transparent;
+font-size: 22px;
+border: 35px solid transparent;
+border-image: url('images/vine border.png') round;
+border-image-slice: 20% 15%;
+border-image-width: 30px;
 }
 h1 {
 margin: 10px auto 40px;
