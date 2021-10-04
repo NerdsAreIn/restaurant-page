@@ -113,10 +113,7 @@ height: 20px;
 border-top: 4px solid purple;
 z-index: 3;
 }
-#menu {
-display: ;
-}
-#about {
+.hidden {
 display: none;
 }
 #menu-image {
