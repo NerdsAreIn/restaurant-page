@@ -2,6 +2,7 @@
 box-sizing: border-box;
 padding: 0;
 margin: 0;
+font-weight: normal;
 }
 @font-face {
 font-family: "flowers1";
@@ -77,7 +78,7 @@ font-size: 22px;
 font-family: "trees";
 font-weight: bold;
 }
-li {
+li.nav-tab {
 line-height: 40px;
 list-style-type: none;
 display: inline;
@@ -92,7 +93,7 @@ appearance: none;
 -webkit-appearance: none;
 text-decoration: none;
 }
-li:hover, li:focus-within {
+li.nav-tab:hover, li.nav-tab:focus-within {
 background-color: rgb(235, 250, 235);
 }
 #banner {
@@ -116,8 +117,22 @@ z-index: 3;
 .hidden {
 display: none;
 }
+#menu {
+text-align: left;
+}
 #menu-image {
 object-fit: contain;
 width: 35vw;
 height: auto;
+}
+h2 {
+text-decoration: 1px solid underline;
+margin-bottom: 8px;
+}
+h5 {
+margin-bottom: 6px;
+}
+li.foodstuff {
+margin-left: 15px;
+font-size: 16px;
 }
