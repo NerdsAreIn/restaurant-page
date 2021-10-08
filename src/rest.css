@@ -93,13 +93,18 @@ background: rgb(235, 250, 235) 0 0/100% 100% no-repeat;
 border-radius: 10px;
 padding: 10px 0px;
 font-family: "trees";
-font-size: 20px;
+font-size: 18px;
 text-align: center;
 border: 35px solid transparent;
 border-image: url('images/vine border.png') round;
 border-image-slice: 20% 15%;
 border-image-width: 30px;
 z-index: 2;
+}
+#rubric {
+font-size: 22px;
+font-weight: bold;
+color: rgb(98, 6, 98);
 }
 .hidden {
 display: none;
@@ -108,17 +113,29 @@ display: none;
 text-align: left;
 }
 h2 {
-text-decoration: 1px solid underline;
-margin-bottom: 8px;
+font-family: "plants";
+font-weight: bold;
+text-decoration: 2px underline solid;
+margin: 12px 0 10px 5px;
 font-weight: normal;
+color: rgb(37, 1, 37);
 }
 h5 {
-margin-bottom: 6px;
+margin-bottom: 8px;
+margin-left: 5px;
 font-weight: normal;
+text-decoration: 1px solid underline;
 }
 .foodstuff {
-margin-left: 15px;
-font-size: 16px;
+margin-left: 10px;
+font-size: 15px;
+list-style-image: url('./images/purple dot1.png');
+text-indent: 10px;
+list-style-position: inside;
+}
+.tab-page p {
+margin: 15px;
+font-size: 17px;
 }
 #bottom-bar {
 background-color: rgb(213, 173, 213);
