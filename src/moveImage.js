@@ -1,5 +1,6 @@
 const crocuses = document.getElementById("crocuses");
-const tabPages = querySelectorAll(".tab-page");
+const tabPages = document.querySelectorAll(".tab-page");
+const dividers = document.querySelectorAll(".divider");
 
 // matchMedia() is a window object method whose argument is a media query string. It returns an object
 // that contains the search result. This can then be matched against the document - using <matches> property -
@@ -7,16 +8,30 @@ const tabPages = querySelectorAll(".tab-page");
 // to continually run the search and refresh the results.
 let result = window.matchMedia("(max-width: 650px)");
  
-export function moveImage(result){
- 	if (result.matches) { 
+const movingFunctions = (function () {
+	function moveImage(result){
+	 	if (result.matches) { 
+        for (let i = 0; i < tabPages.length; i++) {
+			if (!(tabPages[i].classList.contains("hidden"))) {
+                tabPages[i].insertBefore(crocuses, dividers[i]); 				
+                crocuses.setAttribute("style", "margin-top: 20px !important");
+			}
+  		}
+	}
+result.addListener(moveImage);
+}
+function removeImage(result) {
+	if (!(result.matches)) {
 		tabPages.forEach(tabPage => {
-			if (!(tabPage.className.includes("hidden")) 
- 				crocuses.addAttribute("style", "float: right !important");
-                crocuses.style.marginTop = "20px";                                     
-                tabPage.appendChild(crocuses);
+			if (!(tabPage.classList.contains("hidden"))) {
+                tabPage.removeChild(crocuses);
+                document.body.appendChild(crocuses);
+                crocuses.setAttribute("style", "margin-top: revert");                      
 			}
   		});
-
 	}
-};
+result.addListener(removeImage);
+}
+})();
 
+export {movingFunctions};
