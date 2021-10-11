@@ -13,6 +13,7 @@ crocuses.src = crocusPhoto;
 //moveImage(result);
 //removeImage(result);
 result.addEventListener("change", () => {moveImage();});
+window.addEventListener("click", () => {moveImage();});
 result.addEventListener("change", () => {removeImage();});
 
 

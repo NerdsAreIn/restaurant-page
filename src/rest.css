@@ -94,14 +94,14 @@ border-radius: 10px;
 padding: 10px 0px;
 font-family: "trees";
 font-size: 18px;
-text-align: center;
+text-align: left;
 border: 35px solid transparent;
 border-image: url('images/vine border.png') round;
 border-image-slice: 20% 15%;
 border-image-width: 30px;
 z-index: 2;
 }
-#rubric {
+.rubric {
 font-size: 22px;
 font-weight: bold;
 color: rgb(98, 6, 98);
@@ -109,34 +109,49 @@ color: rgb(98, 6, 98);
 .hidden {
 display: none;
 }
-#menu {
-text-align: left;
+#about {
+text-align: center;
 }
 h2 {
 font-family: "plants";
 font-weight: bold;
 text-decoration: 2px underline solid;
-margin: 12px 0 10px 5px;
+margin: 12px 0 12px 5px;
 font-weight: normal;
 color: rgb(37, 1, 37);
 }
-h5 {
+#details-header {
+margin-bottom: 20px;
+}
+.tab-page#contact ul {
+font-size: 20px;
+list-style: none;
+}
+.tab-page#contact li {
+margin: 8px 0px 8px 20px;
+float: left;
+}
+p {
+margin: 3px 0px;
+}
+pre {
+font: inherit;
+}
+h3 {
 margin-bottom: 8px;
 margin-left: 5px;
 font-weight: normal;
+font-size: 18px;
 text-decoration: 1px solid underline;
 }
-.foodstuff {
+ul {
 margin-left: 10px;
 font-size: 15px;
 list-style-image: url('./images/purple dot1.png');
 text-indent: 10px;
 list-style-position: inside;
 }
-.tab-page p {
-margin: 15px;
-font-size: 17px;
-}
+
 #bottom-bar {
 background-color: rgb(213, 173, 213);
 position: fixed;
