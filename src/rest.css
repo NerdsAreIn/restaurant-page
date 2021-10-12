@@ -120,16 +120,62 @@ margin: 12px 0 12px 5px;
 font-weight: normal;
 color: rgb(37, 1, 37);
 }
-#details-header {
+#details-header, #booking-header {
 margin-bottom: 20px;
+}
+#booking-header {
+clear: both;
+}
+.container {
+display: inline-block;
+/*border: 1px solid purple;*/
+text-align: center;
+margin: 0px 20px;
+width: 180px;
+}
+input {
+margin: 10px 8px 30px;
+height: 30px;
+}
+label {
+margin: 5px 10px;
+}
+input[type=number] {
+width: 40px;
+padding-left: 3px
+}
+input[type=date] {
+width: 130px;
+}
+input[type=submit] {
+font: inherit;
+font-weight: bold;
+font-size: 22px;
+width: 30vw;
+margin: 1px auto;
+height: 35px;
+color: white;
+background-color: purple;
+border-radius: 5px;
+border: 2px solid white;
+}
+form {
+text-align: center;
+}
+#tel {
+letter-spacing: 1px;
+width: 110px;
 }
 .tab-page#contact ul {
 font-size: 20px;
 list-style: none;
 }
 .tab-page#contact li {
-margin: 8px 0px 8px 20px;
+margin: 8px 0px 10px 10px;
 float: left;
+}
+#more-margin {
+margin-bottom: 100px;
 }
 p {
 margin: 3px 0px;
@@ -151,7 +197,6 @@ list-style-image: url('./images/purple dot1.png');
 text-indent: 10px;
 list-style-position: inside;
 }
-
 #bottom-bar {
 background-color: rgb(213, 173, 213);
 position: fixed;
