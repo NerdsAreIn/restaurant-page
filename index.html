@@ -58,14 +58,34 @@
                 <li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard
   Nottingham  
   NG7 2ES </pre> </li>
-                <li>
+                <li id="more-margin">
                     <div >
                         <p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p>
                         <p><b class="rubric">Tel</b>: 0115 950 5080</p>
                     </div>
                 </li>
             </ul>
-        </div>
+            <h2 id="booking-header" class="more-margin">Make a Booking</h2>
+            <form id="booking-details" action="#">
+                <div class="container">
+                    <label for="customer">Name:</label><br>
+                    <input id="customer" required name="customer" value="">
+                </div>
+                <div class="container">
+                    <label for="date">Choose a date:</label><br>
+                    <input type="date" id="date" name="date" value="" required>
+                </div>
+                <div class="container">
+                    <label for="guests">Size of party:</label><br>
+                    <input type="number" name="guest-count" value="" id="guests" max="10" min="1" required>
+                </div>
+                <div class="container">
+                    <label for="tel">Contact number:</label><br>
+                    <input name="tel" value="" id="tel" required maxlength="11">
+                </div>
+                <input type="submit" value="Submit">              
+            </form>
+         </div>        
         <div id="bottom-bar"></div>
     </div>
     <script src="main.js">    
