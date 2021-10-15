@@ -44,6 +44,7 @@ height: max(fit-content, 13vh);
 width: 51vw;
 min-width: 340px;
 text-align: center;
+z-index: 5;
 }
 li.nav-tab {
 list-style-type: none;
@@ -79,7 +80,6 @@ outline: 5px double darkgreen;
 position: absolute;
 top: 25vh;
 left: 5vw;
-z-index: 2;
 }
 .tab-page {
 position: absolute;
@@ -115,10 +115,13 @@ text-align: center;
 h2 {
 font-family: "plants";
 font-weight: bold;
-text-decoration: 2px underline solid;
-margin: 12px 0 12px 5px;
+margin: 12px auto;
 font-weight: normal;
 color: rgb(37, 1, 37);
+background-color: rgb(213, 173, 213);
+border-bottom: 3px solid rgb(78, 20, 78);
+padding: 5px;
+z-index: 3;
 }
 #details-header, #booking-header {
 margin-bottom: 20px;
@@ -169,6 +172,9 @@ background-color: purple;
 border-radius: 5px;
 border: 2px solid white;
 }
+input[type=submit]:hover {
+background-color: rgb(24, 114, 64);
+}
 textarea {
 width: 40vw;
 display: block;
@@ -205,9 +211,13 @@ text-decoration: 1px solid underline;
 ul {
 margin-left: 10px;
 font-size: 15px;
-list-style-image: url('./images/purple dot1.png');
+/*list-style-image: url('./images/purple dot1.png')*/;
 text-indent: 10px;
 list-style-position: inside;
+}
+::marker {
+color: purple;
+font-size: 20px;
 }
 #bottom-bar {
 background-color: rgb(213, 173, 213);
@@ -216,7 +226,7 @@ bottom: 0px;
 width: 100%;
 height: 5vh;
 border-top: 4px solid purple;
-z-index: 3;
+z-index: 5;
 }
 @media (max-width: 900px) {
   nav {
@@ -226,8 +236,7 @@ z-index: 3;
     margin-top: 10px !important;
   }
 .tab-page	{
-		/*width: 80vw !important;*/
-    top: 35vh !important;
+		top: 35vh !important;
     left: 5px !important;
 	}
   #crocuses {

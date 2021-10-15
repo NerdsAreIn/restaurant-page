@@ -1,6 +1,6 @@
 import './rest.css';
-import {switchTabs} from './tab-switching.js';
 import crocusPhoto from './images/Crocus.jpg';
+import {switchTabs} from './tab-switching.js';
 import {moveImage, removeImage, crocuses} from './moveImage.js';
 import checkLength from './textarea.js';
 import {submitForm, returnForm} from './submission.js';
@@ -8,7 +8,7 @@ import {submitForm, returnForm} from './submission.js';
 let result = window.matchMedia("(max-width: 650px)");
 const textBox = document.querySelector("textarea");
 const submit = document.querySelector("input[type=submit]");
-const tabPages = document.querySelectorAll(".tab-page");
+const navTabs = document.querySelectorAll(".nav-tab");
 
 crocuses.src = crocusPhoto;
 
@@ -19,8 +19,8 @@ textBox.addEventListener("input", checkLength);
 submit.addEventListener("click", (e) => {
 	submitForm(e);
 });
-tabPages.forEach(tabPage => {
-	tabPage.addEventListener("click", returnForm);
+navTabs.forEach(navTab => {
+	navTab.addEventListener("click", returnForm);
 });
 	
 
