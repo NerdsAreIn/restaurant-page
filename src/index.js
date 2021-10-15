@@ -3,7 +3,8 @@ import crocusPhoto from './images/Crocus.jpg';
 import {switchTabs} from './tab-switching.js';
 import {moveImage, removeImage, crocuses} from './moveImage.js';
 import checkLength from './textarea.js';
-import {submitForm, returnForm} from './submission.js';
+import {returnForm} from './submission.js';
+import checkRequiredInputs from './requiredInputs.js';
 
 let result = window.matchMedia("(max-width: 650px)");
 const textBox = document.querySelector("textarea");
@@ -17,7 +18,7 @@ window.addEventListener("click", () => {moveImage();});
 result.addEventListener("change", () => {removeImage();});
 textBox.addEventListener("input", checkLength);
 submit.addEventListener("click", (e) => {
-	submitForm(e);
+	checkRequiredInputs(e);
 });
 navTabs.forEach(navTab => {
 	navTab.addEventListener("click", returnForm);

@@ -141,10 +141,12 @@ height: 30px;
 padding: 2px 5px;
 border: 1px solid black;
 border-radius: 2px;
+outline: none;
+transition: outline 0.5s linear;
 }
 input:focus, input:focus-within, input:focus-visible, textarea:focus, textarea:focus-visible {
-border: 3px solid  rgb(98, 6, 98);
-outline: none;
+border: 2px solid  rgb(98, 6, 98);
+outline: 4px solid rgba(216, 153, 216, 0.5);
 }
 input:-internal-autofill-selected {
 background-color: purple !important;
@@ -179,6 +181,8 @@ textarea {
 width: 40vw;
 display: block;
 margin: 10px auto;
+transition: outline 0.5s linear;
+border-radius: 1px;
 }
 pre {
 font: inherit;

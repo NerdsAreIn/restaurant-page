@@ -31,20 +31,4 @@ function removeImage() {
 		}		
 	}	
  	
-/*const movingFunctions = (function () {
-	
-	function removeImage(result) {
-		if (!(result.matches)) {
-			tabPages.forEach(tabPage => {
-				if (!(tabPage.classList.contains("hidden"))) {
-					tabPage.removeChild(crocuses);
-					document.body.appendChild(crocuses);
-					crocuses.setAttribute("style", "margin-top: revert");                      
-				}
-			});
-		}
-		result.addListener(removeImage);
-	}
-})();*/
-
 export {moveImage, removeImage, crocuses};
