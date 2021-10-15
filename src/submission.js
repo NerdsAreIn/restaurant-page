@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 const contactPage = document.getElementById("contact");
+const inputs = document.querySelectorAll(".input");
 
 function submitForm(e) {
 	console.log("clicked");
@@ -13,9 +14,12 @@ function submitForm(e) {
 
 function returnForm() {
 	if (form.style.display == "none") {
-		contactPage.lastElementChild.remove();		
+		contactPage.lastElementChild.remove();
+		for (let input of inputs) {
+			input.value = "";
+		}		
         form.style.display = "revert";
-	}
+    }
 }
 
 export {submitForm, returnForm};

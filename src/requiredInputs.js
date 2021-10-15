@@ -1,33 +1,35 @@
 const requiredInputs = document.querySelectorAll("[required]");
-//const submit = document.getElementById("submit");
-const form = document.querySelector("form");
 import {submitForm} from './submission.js';
 
-export default function checkRequiredInputs(e) {
-    console.log({requiredInputs});
-    const inputRequiredMessage;
-    e.preventDefault();
-	check: for (let i = 0; i < requiredInputs.length; i++) {
-		if (requiredInputs[i].value == "") {
-            if (!(requiredInputs[i].parentElement.contains(inputRequiredMessage))) {
-				inputRequiredMessage = document.createElement("div");
-				inputRequiredMessage.style.color = "red";
-				inputRequiredMessage.innerHTML = "<p>You need to fill out this field.</p>";
-				//form.children[i].insertBefore(inputRequiredMessage, requiredInputs[i]);
-				requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
-			}
+// TODO: Want to find a more elegant solution to counting the messages and making the submission contingent on there being none, but this just about works for now:
+function checkRequiredInputs(e) {
+    let inputRequiredMessage;
+    let inputMessages = 0;
+    e.preventDefault();  
+	for (let i = 0; i < requiredInputs.length; i++) {  
+		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {
+			//console.log("no message");
+			inputRequiredMessage = document.createElement("div");
+			inputRequiredMessage.style.color = "red";
+			inputRequiredMessage.innerHTML = "<p>You need to fill out this field.</p>";				
+			requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
+			inputRequiredMessage;
+			inputMessages += 1;      
+			//console.log(inputMessages);				
+		}  
+		else if (requiredInputs[i].value != "")  {
+			//console.log("I've got a message!"); 
+			inputMessages -= 1;		
+			if (requiredInputs[i].parentElement.children.length > 3 ) {
+				requiredInputs[i].parentElement.lastElementChild.remove();						//console.log(inputMessages);              		
+			}  
 		}
-		else if (requiredInputs[i].value != "") {
-			if (requiredInputs[i].parentElement.contains(inputRequiredMessage)) {
-				requiredInputs[i].parentElement.removeChild(inputRequiredMessage);
-			}	
-            else continue check;		
-		}
-	}	
-	if (!(form.contains(inputRequiredMessage))) {
-        console.log("No message!");
-		submitForm(e);
 	}
-	else checkRequiredInputs(e);
+	if (inputMessages <= -4) {
+        //console.log("No message!");
+		submitForm(e);
+        return;
+	}
 }
 
+export {checkRequiredInputs};

@@ -4,7 +4,7 @@ import {switchTabs} from './tab-switching.js';
 import {moveImage, removeImage, crocuses} from './moveImage.js';
 import checkLength from './textarea.js';
 import {returnForm} from './submission.js';
-import checkRequiredInputs from './requiredInputs.js';
+import {checkRequiredInputs} from './requiredInputs.js';
 
 let result = window.matchMedia("(max-width: 650px)");
 const textBox = document.querySelector("textarea");
