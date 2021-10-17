@@ -183,6 +183,7 @@ display: block;
 margin: 10px auto;
 transition: outline 0.5s linear;
 border-radius: 1px;
+padding: 5px;
 }
 pre {
 font: inherit;
