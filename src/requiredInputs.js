@@ -48,13 +48,14 @@ function checkRequiredInputs(e) {
 					const that = requiredInputs[i]; 
                    	checkNumber(that);
 				}				
+			}
 		}
-	}
+		return inputMessages;
 	}
     let valid = inputMessages.toString();
-console.log (inputMessages.toString());
-	if (valid == "0,0,0,0 ") {
-        //console.log("No message!");		
+	console.log({inputMessages});
+	if (inputMessages == [0, 0, 0, 0] || valid == "0,0,0,0" || valid == "" || valid == "0,0,0" || valid == "0,0"|| valid == ",,,0"|| valid == ",,0,0"|| valid == ",0,0,0"|| valid == ",,0"|| valid == ",0"|| valid == "0,0,,0") {
+        console.log("No message!");		
 		submitForm(e);
         return;
 	}
