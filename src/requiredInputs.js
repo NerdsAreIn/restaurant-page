@@ -37,24 +37,26 @@ function checkRequiredInputs(e) {
 			inputRequiredMessage.innerHTML = "<p><b>!</b> You need to fill out this field.</p>";				
 			requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
 			inputMessages[i] = 1;      
-			console.log(inputMessages);				
+			//console.log(inputMessages);				
 		}  
 		else if (requiredInputs[i].value != "")  {					
 			if (requiredInputs[i].parentElement.children.length > 3 ) {
 				requiredInputs[i].parentElement.lastElementChild.remove();
-				inputMessages[i] = 0;		
-				console.log(inputMessages);              		
+				inputMessages[i] = 0;
 				if (requiredInputs[i].id == "tel") {
 					const that = requiredInputs[i]; 
                    	checkNumber(that);
-				}				
+				}							       		
 			}
-		}
-		return inputMessages;
+			else if (requiredInputs[i].id == "tel") {
+					const that = requiredInputs[i]; 
+                   	checkNumber(that);
+			}	
+		}	
 	}
-    let valid = inputMessages.toString();
-	console.log({inputMessages});
-	if (inputMessages == [0, 0, 0, 0] || valid == "0,0,0,0" || valid == "" || valid == "0,0,0" || valid == "0,0"|| valid == ",,,0"|| valid == ",,0,0"|| valid == ",0,0,0"|| valid == ",,0"|| valid == ",0"|| valid == "0,0,,0") {
+    console.log({inputMessages});
+	console.log({invalidMessage});
+	if (!(inputMessages.includes(1)) && invalidMessage == -1) {
         console.log("No message!");		
 		submitForm(e);
         return;
