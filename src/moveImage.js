@@ -12,7 +12,7 @@ function moveImage(){
 	 	if (result.matches) { 
 			for (let i = 0; i < tabPages.length; i++) {
 				if (!(tabPages[i].classList.contains("hidden"))) {
-					tabPages[i].insertBefore(crocuses, dividers[i]); 				
+					tabPages[i].insertBefore(crocuses, dividers[i]);			
 					crocuses.setAttribute("style", "margin-top: 20px !important");
 				}
 			}

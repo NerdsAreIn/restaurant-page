@@ -5,8 +5,7 @@ let invalidMessage = 0;
 import {submitForm} from './submission.js';
 export {checkRequiredInputs};
 
-function checkNumber(requiredInput, inputMessages) {
-    
+function checkNumber(requiredInput) {  
 	let invalidNumberMessage;
 	if (!(requiredInput.value.match(validNumber))) {
         invalidNumberMessage = document.createElement("div");
@@ -20,8 +19,7 @@ function checkNumber(requiredInput, inputMessages) {
 		requiredInput.parentElement.removeChild(invalidNumberMessage);
 		}
 		invalidMessage = -1;
-        console.log({invalidMessage});
-		return invalidMessage;	
+       	return invalidMessage;	
 	}
 }
 
@@ -31,13 +29,11 @@ function checkRequiredInputs(e) {
     e.preventDefault();  
 	for (let i = 0; i < requiredInputs.length; i++) {  
 		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {
-			//console.log("no message");
 			inputRequiredMessage = document.createElement("div");			
             inputRequiredMessage.setAttribute("style", "color: white; border: 2px solid red; margin-top: -10px; border-radius: 10px; background-color: rgba(255, 0, 0, 0.4)")
 			inputRequiredMessage.innerHTML = "<p><b>!</b> You need to fill out this field.</p>";				
 			requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
-			inputMessages[i] = 1;      
-			//console.log(inputMessages);				
+			inputMessages[i] = 1; 			
 		}  
 		else if (requiredInputs[i].value != "")  {					
 			if (requiredInputs[i].parentElement.children.length > 3 ) {
@@ -54,11 +50,8 @@ function checkRequiredInputs(e) {
 			}	
 		}	
 	}
-    console.log({inputMessages});
-	console.log({invalidMessage});
 	if (!(inputMessages.includes(1)) && invalidMessage == -1) {
-        console.log("No message!");		
-		submitForm(e);
+        submitForm(e);
         return;
 	}
 }

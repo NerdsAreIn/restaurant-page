@@ -5,6 +5,7 @@ import {moveImage, removeImage, crocuses} from './moveImage.js';
 import checkLength from './textarea.js';
 import {returnForm} from './submission.js';
 import {checkRequiredInputs} from './requiredInputs.js';
+import loadElements from './loadPage.js';
 
 let result = window.matchMedia("(max-width: 650px)");
 const textBox = document.querySelector("textarea");
@@ -13,6 +14,7 @@ const navTabs = document.querySelectorAll(".nav-tab");
 
 crocuses.src = crocusPhoto;
 
+window.addEventListener("load", loadElements);
 result.addEventListener("change", () => {moveImage();});
 window.addEventListener("click", () => {moveImage();});
 result.addEventListener("change", () => {removeImage();});
@@ -23,6 +25,7 @@ submit.addEventListener("click", (e) => {
 navTabs.forEach(navTab => {
 	navTab.addEventListener("click", returnForm);
 });
+
 	
 
 
