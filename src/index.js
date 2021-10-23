@@ -7,13 +7,17 @@ import {returnForm} from './submission.js';
 import {checkRequiredInputs} from './requiredInputs.js';
 import {loadElements} from './loadPage.js';
 
+document.onload = () => {
+	loadElements();
+};
+
 let result = window.matchMedia("(max-width: 650px)");
 const textBox = document.querySelector("textarea");
 const submit = document.querySelector("input[type=submit]");
 const navTabs = document.querySelectorAll(".nav-tab");
 
 crocuses.src = crocusPhoto;
-document.addEventListener("load", loadElements);
+
 result.addEventListener("change", () => {moveImage();});
 window.addEventListener("click", () => {moveImage();});
 result.addEventListener("change", () => {removeImage();});

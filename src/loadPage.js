@@ -1,17 +1,18 @@
 const contentDiv = document.getElementById("content");
+export {loadElements};
 
  function loadElements() {
 	console.log("page is loaded");
 	const banner = document.createElement("div");
 	banner.id = "banner";
 	contentDiv.appendChild(banner);
-	const title = document.getElementsByTagName("h1");
-	const navBar = document.getElementsByTagName("nav");
-	banner.children[0] = title;
-	banner.children[1] = navBar;
-	const list1 = document.CreateElement("li");
-	const list2 = document.CreateElement("li");
-	const list3 = document.CreateElement("li");
+	const title = document.createElement("h1");
+	const navBar = document.createElement("nav");
+	banner.appendChild(title);
+	banner.appendChild(navBar);
+	const list1 = document.createElement("li");
+	const list2 = document.createElement("li");
+	const list3 = document.createElement("li");
 	list1.className = "nav-tab";
 	list2.className = "nav-tab";	
 	list3.className = "nav-tab";
@@ -38,4 +39,3 @@ const contentDiv = document.getElementById("content");
 	contentDiv.appendChild(bottomBar);	
 }
 
-export {loadElements};
