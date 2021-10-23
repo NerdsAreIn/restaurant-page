@@ -1,5 +1,6 @@
 const contentDiv = document.getElementById("content");
-export {loadElements};
+import crocusPhoto from './images/Crocus.jpg';
+//import {switchTabs} from './tab-switching.js';
 
  function loadElements() {
 	console.log("page is loaded");
@@ -26,21 +27,35 @@ export {loadElements};
 	navBar.appendChild(list1);
 	navBar.appendChild(list2);
 	navBar.appendChild(list3);
-    //const listItems = Array.from(document.getElementsByClassName("nav-tab"));
-	//console.log({listItems});
-	//listItems.forEach(item => navBar.appendChild(item));
-	const image = document.createElement("img");
-	image.src= "../src/images/Crocus.jpg";
+   	const image = document.createElement("img");
 	image.id = "crocuses";
 	image.setAttribute("alt", "purple crocus flowers");
+    image.src = crocusPhoto;    
 	contentDiv.appendChild(image);
 	const aboutPage = document.createElement("div");
 	aboutPage.id = "about";
 	aboutPage.className = "tab-page";
 	aboutPage.innerHTML = '<span class="rubric">Crocus Cafe</span> is a community cafe in Lenton, Nottingham, that was established in 2004 making it the oldest in the city. <span class="divider">The cafe serves entirely vegetarian food that is mostly vegan, and particularly caters to students and homeless people.</span> Suspended meals for the latter group may be purchased. The cafe also houses a small shop, with vegetarian groceries and toiletries stocked, as well as a select range of nature-themed art. The cafe is managed by Real Lives - a charity that provides support to vulnerable people in the community. Come and enjoy our wholesome food at not-for-profit prices, in the cosy and cheerful interior of the cafe. Outdoor seating is also available.';
+	const menuPage = document.createElement("div");
+	menuPage.id= "menu";
+	menuPage.classList.add("tab-page");
+	menuPage.classList.add("hidden");
+	menuPage.innerHTML = '<h2>Breakfasts</h2><h3>Served All Day</h5>            <ul class="foodstuff"><li>Beans on toast (v).................£2.00</li><li>Sausage cob (v)......................£2.50</li><li>Tomatoes on toast (v)..............£5.00</li><li>Mushrooms on toast (v).............£5.00</li><li>Scrambled egg on toast.............£4.00</li><li>Omelette and toast....................£4.00</li><li>"Tofegg" and mushroom cob..........£4.00</li><li>Porridge (v)...............................£4.00</li><li>Scrambled tofu on toast (v)........£5.00</li></ul><span class="divider"></span><p>Add an extra: sausage/egg/tomato - £1 each. All other breakfast items just 50p each.</p><h2>Salads, Sides and Soups</h2><ul class="foodstuff"><li>Wedges (v)..................................£2.00</li><li>Side salad (v)............................£3.00</li><li>Soups of the day (v)...................£3.50</li><li>House salad (v)............................£5.50</li>Mezze (v)..................................£6.50</li></ul><h2>Sandwiches</h2><h3>Served on Bread with a Salad Garnish</h5><ul class="foodstuff"><li>Cheese and chutney (v).................£3.50</li><li>Hummus and chutney (v).................£3.50</li><li>Tofu and chutney (v)...................£4.50</li></ul>';
+	const contactPage = document.createElement("div");
+	contactPage.id = "contact";
+	contactPage.classList.add("tab-page");
+	contactPage.classList.add("hidden");
+    contactPage.innerHTML = '<h2 id="details-header">Contact Details</h2><ul><li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard Nottingham NG7 2ES</pre></li><li><div><p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p><p><b class="rubric">Tel</b>: 0115 950 5080</p></div></li></ul><span class="divider"></span><h2 id="booking-header" class="more-margin">Make a Booking</h2><form id="booking-details" action="#" autocomplete="off"><div class="container"><label for="customer">Name:</label><br><input class="input" id="customer" required name="customer" value=""></div><div class="container"><label for="date">Choose a date:</label><br><input class="input" type="date" id="date" name="date" value="" required></div><div class="container"><label for="guests">Size of party:</label><br><input class="input"  type="number" name="guest-count" value="" id="guests" max="10" min="1" required></div><div class="container"><label for="tel">Contact number:</label><br><input class="input" name="tel" value="" id="tel" required maxlength="11"></div><br><label for="feedback">Any feedback, comments or requests:</label><textarea class="input"  name="feedback" cols="50" rows="6" maxlength="300"></textarea><input type="submit" value="Submit" id="submit"></form>';
+    const dividers = document.querySelectorAll(".divider");
 	contentDiv.appendChild(aboutPage);
+	contentDiv.appendChild(menuPage);
+    contentDiv.appendChild(contactPage);
+	console.log({dividers});
 	const bottomBar = document.createElement("div");
 	bottomBar.id = "bottom-bar";
 	contentDiv.appendChild(bottomBar);	
+    const object = {aboutPage, menuPage, contactPage, list1, list2, list3, image, dividers};
+	return object;
 }
-
+const object = loadElements();
+export {loadElements, object};

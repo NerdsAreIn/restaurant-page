@@ -30,7 +30,7 @@ function checkRequiredInputs(e) {
 	for (let i = 0; i < requiredInputs.length; i++) {  
 		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {
 			inputRequiredMessage = document.createElement("div");			
-            inputRequiredMessage.setAttribute("style", "color: white; border: 2px solid red; margin-top: -10px; border-radius: 10px; background-color: rgba(255, 0, 0, 0.4)")
+            inputRequiredMessage.setAttribute("style", "color: white; border: 2px solid red; margin-top: -10px; border-radius: 10px; background-color: rgba(255, 0, 0, 0.4)");
 			inputRequiredMessage.innerHTML = "<p><b>!</b> You need to fill out this field.</p>";				
 			requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
 			inputMessages[i] = 1; 			

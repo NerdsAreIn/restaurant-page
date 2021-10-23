@@ -1,29 +1,37 @@
-const tabs = document.querySelectorAll("li");
-const aboutPage = document.getElementById("about");
-const menuPage = document.getElementById("menu");
-const contactPage = document.getElementById("contact");
+//const tabs = document.querySelectorAll(".nav-tab");
+const tabs = [object.list1, object.list2, object.list3];
+//const aboutPage = document.getElementById("about");
+//const menuPage = document.getElementById("menu");
+//const contactPage = document.getElementById("contact");
+import {loadElements, object} from './loadPage.js';
 
-const switchTabs = (function() {
+function switchTabs() {
 	tabs.forEach(tab => {
-		tab.addEventListener("click", () => {
-			if (tab.id == "about-tab") {
-				menuPage.classList.add("hidden");
-				contactPage.classList.add("hidden");
-                aboutPage.classList.remove("hidden");                
+		tab.addEventListener("click", (e) => {
+			if (e.target == object.list1) {
+                console.log(e);
+                console.log(object.list1);
+				object.menuPage.classList.add("hidden");
+				object.contactPage.classList.add("hidden");
+                object.aboutPage.classList.remove("hidden");
+                console.log("clicked");                
 			}
-			else if (tab.id == "menu-tab") {
-	            aboutPage.classList.add("hidden");
-				contactPage.classList.add("hidden");
-                menuPage.classList.remove("hidden")
+			else if (e.target == object.list2) {
+   
+	            object.aboutPage.classList.add("hidden");
+				object.contactPage.classList.add("hidden");
+                object.menuPage.classList.remove("hidden");
+                console.log("clicked 2!");
 			}
-			else if (tab.id == "contact-tab") {
-			    aboutPage.classList.add("hidden");
-				menuPage.classList.add("hidden");
-                contactPage.classList.remove("hidden")
+			else if (e.target == object.list3) {
+			    object.aboutPage.classList.add("hidden");
+				object.menuPage.classList.add("hidden");
+                object.contactPage.classList.remove("hidden");
+				console.log("clicked 3");
 			}
 		});
 	});
-})();
+}
 
-export {switchTabs};
+export {switchTabs, tabs};
 

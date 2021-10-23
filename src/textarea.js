@@ -13,4 +13,4 @@ function checkLength() {
 		}
        else charactersExceeded.remove();
 	}
-export default checkLength;
+export {checkLength, textBox};
