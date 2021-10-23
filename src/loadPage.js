@@ -8,6 +8,7 @@ export {loadElements};
 	contentDiv.appendChild(banner);
 	const title = document.createElement("h1");
 	const navBar = document.createElement("nav");
+	title.textContent = "Crocus Cafe";
 	banner.appendChild(title);
 	banner.appendChild(navBar);
 	const list1 = document.createElement("li");
