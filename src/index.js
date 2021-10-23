@@ -7,7 +7,7 @@ import {returnForm} from './submission.js';
 import {checkRequiredInputs} from './requiredInputs.js';
 import {loadElements} from './loadPage.js';
 
-document.onload = () => {
+window.onload = () => {
 	loadElements();
 };
 
