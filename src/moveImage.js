@@ -1,11 +1,8 @@
-import {loadElements, object} from './loadPage.js';
-//const crocuses = document.getElementById("crocuses");
-//const tabPages = document.querySelectorAll(".tab-page");
+import {crocuses, tabPages, dividers} from './loadPage.js';
 //const dividers = document.querySelectorAll(".divider");
-const tabPages = [object.aboutPage, object.menuPage, object.contactPage];
-const crocuses = object.image;
-console.log({tabPages});
-console.log({crocuses});
+//console.log({dividers});
+//const tabPages = [object.aboutPage, object.menuPage, object.contactPage];
+
 
 // matchMedia() is a window object method whose argument is a media query string. It returns an object
 // that contains the search result. This can then be matched against the document - using <matches> property -
@@ -17,7 +14,7 @@ function moveImage(){
 	 	if (result.matches) { 
 			for (let i = 0; i < tabPages.length; i++) {
 				if (!(tabPages[i].classList.contains("hidden"))) {
-					tabPages[i].insertBefore(crocuses, object.dividers[i]);			
+					tabPages[i].insertBefore(crocuses, dividers[i]);			
 					crocuses.setAttribute("style", "margin-top: 20px !important");
 				}
 			}
@@ -28,7 +25,7 @@ function removeImage() {
 		if (!(result.matches)) {
 			tabPages.forEach(tabPage => {
 				if (!(tabPage.classList.contains("hidden"))) {
-					crocuses.remove();
+					tabPage.removeChild(crocuses);
 					document.body.appendChild(crocuses);
 					crocuses.setAttribute("style", "margin-top: revert");                      
 				}
@@ -36,4 +33,7 @@ function removeImage() {
 		}		
 	}	
  	
-export {moveImage, removeImage};
+export {moveImage, removeImage, result};
+//console.log({tabPages});
+//console.log({crocuses});
+//console.log(dividers);

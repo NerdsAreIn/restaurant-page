@@ -1,5 +1,6 @@
+import {contactPage} from './loadPage.js';
 const form = document.querySelector("form");
-const contactPage = document.getElementById("contact");
+//const contactPage = document.getElementById("contact");
 const inputs = document.querySelectorAll(".input");
 
 function submitForm(e) {

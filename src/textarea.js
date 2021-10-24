@@ -1,7 +1,7 @@
 const submit = document.querySelector("input[type=submit]");
 const charactersExceeded = document.createElement("p");
-const textBox = document.querySelector("textarea");
 const form = document.querySelector("form");
+import {textBox} from './loadPage.js';
 
 function checkLength() {
        if (textBox.value.length == 300) {
@@ -13,4 +13,4 @@ function checkLength() {
 		}
        else charactersExceeded.remove();
 	}
-export {checkLength, textBox};
+export {checkLength, submit};

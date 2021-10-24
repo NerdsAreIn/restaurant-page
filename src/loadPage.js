@@ -1,5 +1,7 @@
 const contentDiv = document.getElementById("content");
+//let dividers;
 import crocusPhoto from './images/Crocus.jpg';
+
 //import {switchTabs} from './tab-switching.js';
 
  function loadElements() {
@@ -27,11 +29,11 @@ import crocusPhoto from './images/Crocus.jpg';
 	navBar.appendChild(list1);
 	navBar.appendChild(list2);
 	navBar.appendChild(list3);
-   	const image = document.createElement("img");
-	image.id = "crocuses";
-	image.setAttribute("alt", "purple crocus flowers");
-    image.src = crocusPhoto;    
-	contentDiv.appendChild(image);
+   	const crocuses = document.createElement("img");
+	crocuses.id = "crocuses";
+	crocuses.setAttribute("alt", "purple crocus flowers");
+    crocuses.src = crocusPhoto;    
+	contentDiv.appendChild(crocuses);
 	const aboutPage = document.createElement("div");
 	aboutPage.id = "about";
 	aboutPage.className = "tab-page";
@@ -50,12 +52,21 @@ import crocusPhoto from './images/Crocus.jpg';
 	contentDiv.appendChild(aboutPage);
 	contentDiv.appendChild(menuPage);
     contentDiv.appendChild(contactPage);
-	console.log({dividers});
+	//console.log({dividers});
 	const bottomBar = document.createElement("div");
 	bottomBar.id = "bottom-bar";
 	contentDiv.appendChild(bottomBar);	
-    const object = {aboutPage, menuPage, contactPage, list1, list2, list3, image, dividers};
-	return object;
+    //return {aboutPage, menuPage, contactPage, list1, list2, list3, crocuses, dividers};
+
 }
-const object = loadElements();
-export {loadElements, object};
+//const object = loadElements();
+const crocuses = document.getElementById("crocuses");
+const tabPages = document.querySelectorAll(".tab-page");
+const dividers = document.querySelectorAll(".divider");
+const aboutPage = document.getElementById("about");
+const menuPage = document.getElementById("menu");
+const contactPage = document.getElementById("contact");
+const tabs = document.querySelectorAll(".nav-tab");
+const textBox = document.querySelector("textarea");
+console.log({dividers});
+export {loadElements, crocuses, tabPages, aboutPage, menuPage, contactPage, tabs, textBox, dividers};
