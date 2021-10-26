@@ -19,19 +19,19 @@ tabs.forEach(tab => {
     //tab.addEventListener("click", switchTabs);
     tab.addEventListener("click", returnForm);
 	tab.addEventListener("click", e => {
-		console.log(e);
+		//console.log(e);
 	});	
 });
 //object.list1.onclick = () => {console.log("clicked");};
 result.addEventListener("change", moveImage);
 window.addEventListener("click", () => moveImage());
-result.addEventListener("change", () => removeImage());
+result.addEventListener("change", removeImage);
 textBox.addEventListener("input", checkLength);
 submit.addEventListener("click", (e) => {
 	checkRequiredInputs(e);
 });
 
-console.log({tabs});
+//console.log({tabs});
 
 
 	

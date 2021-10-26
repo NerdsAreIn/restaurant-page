@@ -1,5 +1,5 @@
 const contentDiv = document.getElementById("content");
-//let dividers;
+let dividers2 = [];
 import crocusPhoto from './images/Crocus.jpg';
 
 //import {switchTabs} from './tab-switching.js';
@@ -48,25 +48,29 @@ import crocusPhoto from './images/Crocus.jpg';
 	contactPage.classList.add("tab-page");
 	contactPage.classList.add("hidden");
     contactPage.innerHTML = '<h2 id="details-header">Contact Details</h2><ul><li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard Nottingham NG7 2ES</pre></li><li><div><p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p><p><b class="rubric">Tel</b>: 0115 950 5080</p></div></li></ul><span class="divider"></span><h2 id="booking-header" class="more-margin">Make a Booking</h2><form id="booking-details" action="#" autocomplete="off"><div class="container"><label for="customer">Name:</label><br><input class="input" id="customer" required name="customer" value=""></div><div class="container"><label for="date">Choose a date:</label><br><input class="input" type="date" id="date" name="date" value="" required></div><div class="container"><label for="guests">Size of party:</label><br><input class="input"  type="number" name="guest-count" value="" id="guests" max="10" min="1" required></div><div class="container"><label for="tel">Contact number:</label><br><input class="input" name="tel" value="" id="tel" required maxlength="11"></div><br><label for="feedback">Any feedback, comments or requests:</label><textarea class="input"  name="feedback" cols="50" rows="6" maxlength="300"></textarea><input type="submit" value="Submit" id="submit"></form>';
-    const dividers = document.querySelectorAll(".divider");
-	contentDiv.appendChild(aboutPage);
+    contentDiv.appendChild(aboutPage);
 	contentDiv.appendChild(menuPage);
     contentDiv.appendChild(contactPage);
-	//console.log({dividers});
+// This one gets a reference:
+	let dividers = document.getElementsByClassName("divider");
+    dividers2.push(dividers[0]);
+    dividers2.push(dividers[1]);
+    dividers2.push(dividers[2]);
+    console.log({dividers2});
+	console.log({dividers});
 	const bottomBar = document.createElement("div");
 	bottomBar.id = "bottom-bar";
 	contentDiv.appendChild(bottomBar);	
-    //return {aboutPage, menuPage, contactPage, list1, list2, list3, crocuses, dividers};
-
+    //return {dividers};
 }
 //const object = loadElements();
 const crocuses = document.getElementById("crocuses");
 const tabPages = document.querySelectorAll(".tab-page");
-const dividers = document.querySelectorAll(".divider");
+//const dividers = document.querySelectorAll(".divider");
 const aboutPage = document.getElementById("about");
 const menuPage = document.getElementById("menu");
 const contactPage = document.getElementById("contact");
 const tabs = document.querySelectorAll(".nav-tab");
 const textBox = document.querySelector("textarea");
-console.log({dividers});
-export {loadElements, crocuses, tabPages, aboutPage, menuPage, contactPage, tabs, textBox, dividers};
+console.log({dividers2});
+export {loadElements, crocuses, tabPages, aboutPage, menuPage, contactPage, tabs, textBox, dividers2};

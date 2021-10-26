@@ -1,6 +1,6 @@
-import {crocuses, tabPages, dividers} from './loadPage.js';
+import {crocuses, tabPages, dividers2} from './loadPage.js';
 //const dividers = document.querySelectorAll(".divider");
-//console.log({dividers});
+console.log({dividers2});
 //const tabPages = [object.aboutPage, object.menuPage, object.contactPage];
 
 
@@ -14,7 +14,7 @@ function moveImage(){
 	 	if (result.matches) { 
 			for (let i = 0; i < tabPages.length; i++) {
 				if (!(tabPages[i].classList.contains("hidden"))) {
-					tabPages[i].insertBefore(crocuses, dividers[i]);			
+					tabPages[i].insertBefore(crocuses, dividers2[i]);			
 					crocuses.setAttribute("style", "margin-top: 20px !important");
 				}
 			}
