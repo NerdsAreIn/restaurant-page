@@ -5,8 +5,7 @@ let invalidMessage = 0;
 import {submitForm} from './submission.js';
 export {checkRequiredInputs};
 
-function checkNumber(requiredInput, inputMessages) {
-    
+function checkNumber(requiredInput) {    
 	let invalidNumberMessage;
 	if (!(requiredInput.value.match(validNumber))) {
         invalidNumberMessage = document.createElement("div");
@@ -17,11 +16,10 @@ function checkNumber(requiredInput, inputMessages) {
 	}
 	else if (requiredInput.value.match(validNumber)) {
         if (requiredInput.parentElement.contains(invalidNumberMessage)) {
-		requiredInput.parentElement.removeChild(invalidNumberMessage);
+			requiredInput.parentElement.removeChild(invalidNumberMessage);
 		}
 		invalidMessage = -1;
-        console.log({invalidMessage});
-		return invalidMessage;	
+        return invalidMessage;	
 	}
 }
 
@@ -29,15 +27,13 @@ function checkNumber(requiredInput, inputMessages) {
 function checkRequiredInputs(e) {
     let inputRequiredMessage;    
     e.preventDefault();  
-	for (let i = 0; i < requiredInputs.length; i++) {  
+	for (let i = 0; i < requiredInputs.length; ++i) {  
 		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {
-			//console.log("no message");
 			inputRequiredMessage = document.createElement("div");			
-            inputRequiredMessage.setAttribute("style", "color: white; border: 2px solid red; margin-top: -10px; border-radius: 10px; background-color: rgba(255, 0, 0, 0.4)")
+            inputRequiredMessage.setAttribute("style", "color: white; border: 2px solid red; margin-top: -10px; border-radius: 10px; background-color: rgba(255, 0, 0, 0.4)");
 			inputRequiredMessage.innerHTML = "<p><b>!</b> You need to fill out this field.</p>";				
 			requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
 			inputMessages[i] = 1;      
-			//console.log(inputMessages);				
 		}  
 		else if (requiredInputs[i].value != "")  {					
 			if (requiredInputs[i].parentElement.children.length > 3 ) {
@@ -54,11 +50,8 @@ function checkRequiredInputs(e) {
 			}	
 		}	
 	}
-    console.log({inputMessages});
-	console.log({invalidMessage});
-	if (!(inputMessages.includes(1)) && invalidMessage == -1) {
-        console.log("No message!");		
-		submitForm(e);
+    if (!(inputMessages.includes(1)) && invalidMessage == -1) {
+        submitForm(e);
         return;
 	}
 }
