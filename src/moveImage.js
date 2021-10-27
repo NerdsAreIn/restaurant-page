@@ -1,8 +1,7 @@
 import {crocuses, tabPages, dividers2} from './loadPage.js';
-//const dividers = document.querySelectorAll(".divider");
 console.log({dividers2});
-//const tabPages = [object.aboutPage, object.menuPage, object.contactPage];
-
+console.log({crocuses});
+console.log({tabPages});
 
 // matchMedia() is a window object method whose argument is a media query string. It returns an object
 // that contains the search result. This can then be matched against the document - using <matches> property -
@@ -14,6 +13,7 @@ function moveImage(){
 	 	if (result.matches) { 
 			for (let i = 0; i < tabPages.length; i++) {
 				if (!(tabPages[i].classList.contains("hidden"))) {
+                    console.log(dividers2[i]);
 					tabPages[i].insertBefore(crocuses, dividers2[i]);			
 					crocuses.setAttribute("style", "margin-top: 20px !important");
 				}
