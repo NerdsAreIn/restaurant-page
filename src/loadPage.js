@@ -1,11 +1,10 @@
 const contentDiv = document.getElementById("content");
+const crocuses = createImage();
 let dividers2 = [];
 let tabPages = [];
-const crocuses = createImage();
-let aboutPage;
-let menuPage;
-let contactPage;
 let tabs = [];
+//let textBox;
+
 import crocusPhoto from './images/Crocus.jpg';
 
 function createImage() {
@@ -15,7 +14,11 @@ function createImage() {
     crocuses.src = crocusPhoto;    
 	return crocuses;
 }
-
+/*function createTextbox() {
+	const textBox = document.querySelector("textarea");
+	console.log({textBox});
+	return textBox;
+}*/
 
  function loadElements() {
 	const banner = document.createElement("div");
@@ -45,18 +48,18 @@ function createImage() {
 	navBar.appendChild(list2);
 	navBar.appendChild(list3);
 	contentDiv.appendChild(crocuses);
-  	aboutPage = document.createElement("div");
+  	const aboutPage = document.createElement("div");
 	aboutPage.id = "about";
 	aboutPage.className = "tab-page";
     aboutPage.innerHTML = '<span class="rubric">Crocus Cafe</span> is a community cafe in Lenton, Nottingham, that was established in 2004 making it the oldest in the city. <span class="divider">The cafe serves entirely vegetarian food that is mostly vegan, and particularly caters to students and homeless people.</span> Suspended meals for the latter group may be purchased. The cafe also houses a small shop, with vegetarian groceries and toiletries stocked, as well as a select range of nature-themed art. The cafe is managed by Real Lives - a charity that provides support to vulnerable people in the community. Come and enjoy our wholesome food at not-for-profit prices, in the cosy and cheerful interior of the cafe. Outdoor seating is also available.';
 	tabPages.push(aboutPage);
-	menuPage = document.createElement("div");
+	const menuPage = document.createElement("div");
 	menuPage.id= "menu";
 	menuPage.classList.add("tab-page");
 	menuPage.classList.add("hidden");
 	menuPage.innerHTML = '<h2>Breakfasts</h2><h3>Served All Day</h5>            <ul class="foodstuff"><li>Beans on toast (v).................£2.00</li><li>Sausage cob (v)......................£2.50</li><li>Tomatoes on toast (v)..............£5.00</li><li>Mushrooms on toast (v).............£5.00</li><li>Scrambled egg on toast.............£4.00</li><li>Omelette and toast....................£4.00</li><li>"Tofegg" and mushroom cob..........£4.00</li><li>Porridge (v)...............................£4.00</li><li>Scrambled tofu on toast (v)........£5.00</li></ul><span class="divider"></span><p>Add an extra: sausage/egg/tomato - £1 each. All other breakfast items just 50p each.</p><h2>Salads, Sides and Soups</h2><ul class="foodstuff"><li>Wedges (v)..................................£2.00</li><li>Side salad (v)............................£3.00</li><li>Soups of the day (v)...................£3.50</li><li>House salad (v)............................£5.50</li>Mezze (v)..................................£6.50</li></ul><h2>Sandwiches</h2><h3>Served on Bread with a Salad Garnish</h5><ul class="foodstuff"><li>Cheese and chutney (v).................£3.50</li><li>Hummus and chutney (v).................£3.50</li><li>Tofu and chutney (v)...................£4.50</li></ul>';
 	tabPages.push(menuPage);
-	contactPage = document.createElement("div");
+	const contactPage = document.createElement("div");
 	contactPage.id = "contact";
 	contactPage.classList.add("tab-page");
 	contactPage.classList.add("hidden");
@@ -71,13 +74,10 @@ function createImage() {
     dividers2.push(dividers[2]);
    	const bottomBar = document.createElement("div");
 	bottomBar.id = "bottom-bar";
+	//textBox = createTextbox();
 	contentDiv.appendChild(bottomBar);		
-	//aboutPage = document.getElementById("about");
-	//menuPage = document.getElementById("menu");
-	//contactPage = document.getElementById("contact");	
 }
 
-const textBox = document.querySelector("textarea");
-
-console.log({tabs});
-export {loadElements, crocuses, tabPages, aboutPage, menuPage, contactPage, tabs, textBox, dividers2};
+const textBox = contentDiv.getElementsByTagName("textarea")[0];
+console.log({textBox});
+export {loadElements, crocuses, tabPages, tabs, dividers2, textBox};

@@ -1,7 +1,10 @@
-import {contactPage} from './loadPage.js';
+//import {contactPage} from './loadPage.js';
 const form = document.querySelector("form");
-//const contactPage = document.getElementById("contact");
+const contactPage = document.getElementById("contact");
 const inputs = document.querySelectorAll(".input");
+console.log({contactPage});
+console.log({inputs});
+console.log({form});
 
 function submitForm(e) {
 	console.log("clicked");

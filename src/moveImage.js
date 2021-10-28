@@ -1,7 +1,4 @@
 import {crocuses, tabPages, dividers2} from './loadPage.js';
-console.log({dividers2});
-console.log({crocuses});
-console.log({tabPages});
 
 // matchMedia() is a window object method whose argument is a media query string. It returns an object
 // that contains the search result. This can then be matched against the document - using <matches> property -
@@ -34,6 +31,3 @@ function removeImage() {
 	}	
  	
 export {moveImage, removeImage, result};
-//console.log({tabPages});
-//console.log({crocuses});
-//console.log(dividers);

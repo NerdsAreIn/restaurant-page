@@ -2,24 +2,22 @@ import './rest.css';
 import {moveImage, removeImage, result} from './moveImage.js';
 import {loadElements, tabs, textBox} from './loadPage.js';
 import {switchTabs} from './tab-switching.js';
-window.onload = () => {
+window.onload = (e) => {
 	loadElements();
-	//moveImage();
-	//removeImage();
-    switchTabs();
+	switchTabs();
+	checkRequiredInputs(e);   
 };
-import {checkLength, submit} from './textarea.js';
+//const textBox = document.querySelector("textarea");
+console.log({textBox});
 import {returnForm} from './submission.js';
 import {checkRequiredInputs} from './requiredInputs.js';
-
+import {checkLength, submit} from './textarea.js';
 
 //let result = window.matchMedia("(max-width: 650px)");
-//const textBox = document.querySelector("textarea");
 //const submit = document.querySelector("input[type=submit]");
 //const tabs = document.querySelectorAll(".nav-tab");
 
 tabs.forEach(tab => {	
-    //tab.addEventListener("click", switchTabs);
     tab.addEventListener("click", returnForm);
 	tab.addEventListener("click", e => {
 		console.log(e);
@@ -33,7 +31,7 @@ submit.addEventListener("click", (e) => {
 	checkRequiredInputs(e);
 });
 
-
+//export {textBox};
 
 
 	

@@ -2,8 +2,10 @@ const requiredInputs = document.querySelectorAll("[required]");
 const validNumber = /^0\d{10}/;
 let inputMessages = [];
 let invalidMessage = 0;
+
+console.log({requiredInputs});
 import {submitForm} from './submission.js';
-export {checkRequiredInputs};
+export {checkRequiredInputs, requiredInputs};
 
 function checkNumber(requiredInput) {  
 	let invalidNumberMessage;
