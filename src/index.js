@@ -5,13 +5,14 @@ import {switchTabs} from './tab-switching.js';
 window.onload = (e) => {
 	loadElements();
 	switchTabs();
-	checkRequiredInputs(e);   
+	//checkRequiredInputs(e);   
 };
 //const textBox = document.querySelector("textarea");
-console.log({textBox});
+
 import {returnForm} from './submission.js';
 import {checkRequiredInputs} from './requiredInputs.js';
 import {checkLength, submit} from './textarea.js';
+console.log({submit});
 
 //let result = window.matchMedia("(max-width: 650px)");
 //const submit = document.querySelector("input[type=submit]");

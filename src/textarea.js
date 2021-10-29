@@ -1,8 +1,11 @@
-const submit = document.querySelector("input[type=submit]");
+//const submit = document.getElementById("submit");
 const charactersExceeded = document.createElement("p");
-const form = document.querySelector("form");
-import {textBox} from './loadPage.js';
+//const form = document.getElementsByTagName("form")[0];
+import {textBox, submit, form} from './loadPage.js';
 
+console.log({form});
+console.log({textBox});
+console.log({submit});
 
 function checkLength() {
 	//const textBox = document.querySelector("textarea");

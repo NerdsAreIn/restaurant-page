@@ -1,11 +1,11 @@
-const requiredInputs = document.querySelectorAll("[required]");
 const validNumber = /^0\d{10}/;
 let inputMessages = [];
 let invalidMessage = 0;
+let requiredInputs;
 
-console.log({requiredInputs});
+
 import {submitForm} from './submission.js';
-export {checkRequiredInputs, requiredInputs};
+export {checkRequiredInputs};
 
 function checkNumber(requiredInput) {  
 	let invalidNumberMessage;
@@ -27,7 +27,9 @@ function checkNumber(requiredInput) {
 
 // TODO: Want to find a more elegant solution to counting the messages and making the submission contingent on there being none, but this just about works for now:
 function checkRequiredInputs(e) {
-    let inputRequiredMessage;    
+    let inputRequiredMessage; 
+	requiredInputs = document.querySelectorAll("[required]");
+	console.log({requiredInputs});
     e.preventDefault();  
 	for (let i = 0; i < requiredInputs.length; i++) {  
 		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {

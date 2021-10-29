@@ -1,9 +1,9 @@
 const contentDiv = document.getElementById("content");
 const crocuses = createImage();
+const submit = createSubmitButton();
 let dividers2 = [];
 let tabPages = [];
 let tabs = [];
-//let textBox;
 
 import crocusPhoto from './images/Crocus.jpg';
 
@@ -14,11 +14,14 @@ function createImage() {
     crocuses.src = crocusPhoto;    
 	return crocuses;
 }
-/*function createTextbox() {
-	const textBox = document.querySelector("textarea");
-	console.log({textBox});
-	return textBox;
-}*/
+function createSubmitButton() {
+	const submit = document.createElement("input");
+    submit.id = "submit";
+    submit.setAttribute("value", "Submit");
+	submit.setAttribute("type", "submit");
+	console.log({submit});
+	return submit;
+}
 
  function loadElements() {
 	const banner = document.createElement("div");
@@ -63,7 +66,8 @@ function createImage() {
 	contactPage.id = "contact";
 	contactPage.classList.add("tab-page");
 	contactPage.classList.add("hidden");
-    contactPage.innerHTML = '<h2 id="details-header">Contact Details</h2><ul><li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard Nottingham NG7 2ES</pre></li><li><div><p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p><p><b class="rubric">Tel</b>: 0115 950 5080</p></div></li></ul><span class="divider"></span><h2 id="booking-header" class="more-margin">Make a Booking</h2><form id="booking-details" action="#" autocomplete="off"><div class="container"><label for="customer">Name:</label><br><input class="input" id="customer" required name="customer" value=""></div><div class="container"><label for="date">Choose a date:</label><br><input class="input" type="date" id="date" name="date" value="" required></div><div class="container"><label for="guests">Size of party:</label><br><input class="input"  type="number" name="guest-count" value="" id="guests" max="10" min="1" required></div><div class="container"><label for="tel">Contact number:</label><br><input class="input" name="tel" value="" id="tel" required maxlength="11"></div><br><label for="feedback">Any feedback, comments or requests:</label><textarea class="input"  name="feedback" cols="50" rows="6" maxlength="300"></textarea><input type="submit" value="Submit" id="submit"></form>';
+    contactPage.innerHTML = '<h2 id="details-header">Contact Details</h2><ul><li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard Nottingham NG7 2ES</pre></li><li><div><p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p><p><b class="rubric">Tel</b>: 0115 950 5080</p></div></li></ul><span class="divider"></span><h2 id="booking-header" class="more-margin">Make a Booking</h2><form id="booking-details" action="#" autocomplete="off"><div class="container"><label for="customer">Name:</label><br><input class="input" id="customer" required name="customer" value=""></div><div class="container"><label for="date">Choose a date:</label><br><input class="input" type="date" id="date" name="date" value="" required></div><div class="container"><label for="guests">Size of party:</label><br><input class="input" type="number" name="guest-count" value="" id="guests" max="10" min="1" required></div><div class="container"><label for="tel">Contact number:</label><br><input class="input" name="tel" value="" id="tel" required maxlength="11"></div><br><label for="feedback">Any feedback, comments or requests:</label><textarea class="input" name="feedback" cols="50" rows="6" maxlength="300"></textarea><!--<input type="submit" value="Submit" id="submit">--></form>';
+    contactPage.appendChild(submit);
     tabPages.push(contactPage);
     contentDiv.appendChild(aboutPage);
 	contentDiv.appendChild(menuPage);
@@ -74,10 +78,15 @@ function createImage() {
     dividers2.push(dividers[2]);
    	const bottomBar = document.createElement("div");
 	bottomBar.id = "bottom-bar";
-	//textBox = createTextbox();
 	contentDiv.appendChild(bottomBar);		
 }
 
-const textBox = contentDiv.getElementsByTagName("textarea")[0];
+const textBox = contentDiv.getElementsByTagName("textarea");
+//const submit = contentDiv.getElementsByClassName("input")[5];
+const form = contentDiv.getElementsByTagName("form");
+//const contactPage = contentDiv.getElementByClassName("tab-page")[2];
 console.log({textBox});
-export {loadElements, crocuses, tabPages, tabs, dividers2, textBox};
+console.log({submit});
+console.log({form});
+//console.log({contactPage});
+export {loadElements, crocuses, tabPages, tabs, dividers2, textBox, submit, form};
