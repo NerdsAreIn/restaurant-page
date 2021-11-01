@@ -109,7 +109,7 @@ color: rgb(98, 6, 98);
 .hidden {
 display: none;
 }
-#about {
+#about, #contact {
 text-align: center;
 }
 h2 {
@@ -131,7 +131,6 @@ clear: both;
 }
 .container {
 display: inline-block;
-/*border: 1px solid purple;*/
 margin: 10px 8px;
 width: 190px;
 }
@@ -148,11 +147,6 @@ input:focus, input:focus-within, input:focus-visible, textarea:focus, textarea:f
 border: 2px solid  rgb(98, 6, 98);
 outline: 4px solid rgba(216, 153, 216, 0.5);
 }
-input:-internal-autofill-selected {
-background-color: purple !important;
-appearance: none;
--webkit-appearance: none !important;
-}
 label {
 margin: 12px 10px;
 }
@@ -162,7 +156,7 @@ width: 40px;
 input[type=date] {
 width: 140px;
 }
-input[type=submit] {
+#submit {
 font: inherit;
 font-weight: bold;
 font-size: 22px;
@@ -174,7 +168,7 @@ background-color: purple;
 border-radius: 5px;
 border: 2px solid white;
 }
-input[type=submit]:hover {
+#submit:hover {
 background-color: rgb(24, 114, 64);
 }
 textarea {
@@ -201,6 +195,7 @@ list-style: none;
 }
 .tab-page#contact li {
 margin: 8px 0px 10px 10px;
+text-align: left;
 }
 p {
 margin: 3px 5px;
@@ -216,7 +211,6 @@ text-decoration: 1px solid underline;
 ul {
 margin-left: 10px;
 font-size: 15px;
-/*list-style-image: url('./images/purple dot1.png')*/;
 text-indent: 10px;
 list-style-position: inside;
 }
@@ -240,7 +234,7 @@ z-index: 5;
     border-collapse: collapse !important;
     margin-top: 10px !important;
   }
-.tab-page	{
+  .tab-page	{
 		top: 35vh !important;
     left: 5px !important;
 	}
@@ -249,6 +243,9 @@ z-index: 5;
     position: unset !important; 
     margin-top: calc(30vh + 80px) !important;   
   } 
+  .tab-page#contact ul {
+    font-size: 17px;
+  }
 }
 @media (max-height: 350px) {
     .tab-page {

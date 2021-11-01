@@ -12,7 +12,7 @@ window.onload = (e) => {
 import {returnForm} from './submission.js';
 import {checkRequiredInputs} from './requiredInputs.js';
 import {checkLength, submit} from './textarea.js';
-console.log({submit});
+console.log({textBox});
 
 //let result = window.matchMedia("(max-width: 650px)");
 //const submit = document.querySelector("input[type=submit]");

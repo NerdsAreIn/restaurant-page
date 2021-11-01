@@ -84,9 +84,10 @@ function createSubmitButton() {
 const textBox = contentDiv.getElementsByTagName("textarea");
 //const submit = contentDiv.getElementsByClassName("input")[5];
 const form = contentDiv.getElementsByTagName("form");
+const contactPage = tabPages[2];
 //const contactPage = contentDiv.getElementByClassName("tab-page")[2];
 console.log({textBox});
 console.log({submit});
 console.log({form});
-//console.log({contactPage});
+console.log({contactPage});
 export {loadElements, crocuses, tabPages, tabs, dividers2, textBox, submit, form};
