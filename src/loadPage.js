@@ -1,6 +1,8 @@
 const contentDiv = document.getElementById("content");
 const crocuses = createImage();
 const submit = createSubmitButton();
+const textBox = createTextBox();
+const form = createForm();
 let dividers2 = [];
 let tabPages = [];
 let tabs = [];
@@ -21,6 +23,23 @@ function createSubmitButton() {
 	submit.setAttribute("type", "submit");
 	console.log({submit});
 	return submit;
+}
+function createTextBox() {
+	const textBox = document.createElement("textarea");
+	textBox.setAttribute("name", "feedback");
+	textBox.setAttribute("cols", "50");
+	textBox.setAttribute("rows", "6");
+	textBox.setAttribute("maxlength", "300");
+    textBox.className = "input"; 
+    return textBox;   
+}
+function createForm() {
+	const form = document.createElement("form");
+	form.id = "booking-details";
+    form.setAttribute("action", "#");
+    form.setAttribute("autocomplete", "off");
+	form.innerHTML = '<div class="container"><label for="customer">Name:</label><br><input class="input" id="customer" required name="customer" value=""></div><div class="container"><label for="date">Choose a date:</label><br><input class="input" type="date" id="date" name="date" value="" required></div><div class="container"><label for="guests">Size of party:</label><br><input class="input" type="number" name="guest-count" value="" id="guests" max="10" min="1" required></div><div class="container"><label for="tel">Contact number:</label><br><input class="input" name="tel" value="" id="tel" required maxlength="11"></div><br><label for="feedback">Any feedback, comments or requests:</label>';
+	return form;
 }
 
  function loadElements() {
@@ -66,7 +85,9 @@ function createSubmitButton() {
 	contactPage.id = "contact";
 	contactPage.classList.add("tab-page");
 	contactPage.classList.add("hidden");
-    contactPage.innerHTML = '<h2 id="details-header">Contact Details</h2><ul><li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard Nottingham NG7 2ES</pre></li><li><div><p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p><p><b class="rubric">Tel</b>: 0115 950 5080</p></div></li></ul><span class="divider"></span><h2 id="booking-header" class="more-margin">Make a Booking</h2><form id="booking-details" action="#" autocomplete="off"><div class="container"><label for="customer">Name:</label><br><input class="input" id="customer" required name="customer" value=""></div><div class="container"><label for="date">Choose a date:</label><br><input class="input" type="date" id="date" name="date" value="" required></div><div class="container"><label for="guests">Size of party:</label><br><input class="input" type="number" name="guest-count" value="" id="guests" max="10" min="1" required></div><div class="container"><label for="tel">Contact number:</label><br><input class="input" name="tel" value="" id="tel" required maxlength="11"></div><br><label for="feedback">Any feedback, comments or requests:</label><textarea class="input" name="feedback" cols="50" rows="6" maxlength="300"></textarea><!--<input type="submit" value="Submit" id="submit">--></form>';
+    contactPage.innerHTML = '<h2 id="details-header">Contact Details</h2><ul><li><b class="rubric">Address</b>:<pre>18 Lenton Boulevard Nottingham NG7 2ES</pre></li><li><div><p><b class="rubric">Email</b>: wearecrocus@hotmail.com</p><p><b class="rubric">Tel</b>: 0115 950 5080</p></div></li></ul><span class="divider"></span><h2 id="booking-header" class="more-margin">Make a Booking</h2>';
+	form.appendChild(textBox);
+    contactPage.appendChild(form);
     contactPage.appendChild(submit);
     tabPages.push(contactPage);
     contentDiv.appendChild(aboutPage);
@@ -81,13 +102,4 @@ function createSubmitButton() {
 	contentDiv.appendChild(bottomBar);		
 }
 
-const textBox = contentDiv.getElementsByTagName("textarea");
-//const submit = contentDiv.getElementsByClassName("input")[5];
-const form = contentDiv.getElementsByTagName("form");
-const contactPage = tabPages[2];
-//const contactPage = contentDiv.getElementByClassName("tab-page")[2];
-console.log({textBox});
-console.log({submit});
-console.log({form});
-console.log({contactPage});
 export {loadElements, crocuses, tabPages, tabs, dividers2, textBox, submit, form};
