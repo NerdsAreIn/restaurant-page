@@ -2,19 +2,15 @@ import './rest.css';
 import {moveImage, removeImage, result} from './moveImage.js';
 import {loadElements, tabs, textBox} from './loadPage.js';
 import {switchTabs} from './tab-switching.js';
+
 window.onload = (e) => {
 	loadElements();
 	switchTabs(); 	
 };
-import {returnForm} from './submission.js';
+
 import {checkRequiredInputs} from './requiredInputs.js';
 import {checkLength, submit} from './textarea.js';
 
-console.log({tabs});
-
-tabs.forEach(tab => {	
-    tab.addEventListener("click", returnForm);
-});
 result.addEventListener("change", moveImage);
 window.addEventListener("click", moveImage);
 result.addEventListener("change", removeImage);

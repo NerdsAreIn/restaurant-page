@@ -3,7 +3,6 @@ let inputMessages = [];
 let invalidMessage = 0;
 let requiredInputs;
 
-
 import {submitForm} from './submission.js';
 export {checkRequiredInputs};
 
@@ -29,8 +28,7 @@ function checkNumber(requiredInput) {
 function checkRequiredInputs(e) {
     let inputRequiredMessage; 
 	requiredInputs = document.querySelectorAll("[required]");
-	console.log({requiredInputs});
-    e.preventDefault();  
+	e.preventDefault();  
 	for (let i = 0; i < requiredInputs.length; i++) {  
 		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {
 			inputRequiredMessage = document.createElement("div");			

@@ -2,12 +2,7 @@ import {tabPages, form, submit} from './loadPage.js';
 
 const inputs = document.getElementsByClassName("input");
 
-console.log({inputs});
-console.log({form});
-console.log({tabPages});
-
 function submitForm(e) {
-	console.log("clicked");
 	e.preventDefault();
     const submissionNotice = document.createElement("p");
     submissionNotice.textContent = "Thank you. Your booking has been logged. See you soon.";    
@@ -18,7 +13,7 @@ function submitForm(e) {
 }
 
 function returnForm() {
-	if (form.style.display == "none") {
+   	if (form.style.display == "none") {
 		tabPages[2].lastElementChild.remove();
 		for (let input of inputs) {
 			input.value = "";
@@ -26,6 +21,7 @@ function returnForm() {
         form.style.display = "revert";
         submit.style.display = "revert";
     }
+	else return;
 }
 
 export {submitForm, returnForm};

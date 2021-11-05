@@ -144,7 +144,7 @@ outline: none;
 transition: outline 0.5s linear;
 }
 input:focus, input:focus-within, input:focus-visible, textarea:focus, textarea:focus-visible {
-border: 2px solid  rgb(98, 6, 98);
+border: 2px solid rgb(98, 6, 98);
 outline: 4px solid rgba(216, 153, 216, 0.5);
 }
 label {
@@ -167,6 +167,7 @@ color: white;
 background-color: purple;
 border-radius: 5px;
 border: 2px solid white;
+outline: none;
 }
 #submit:hover {
 background-color: rgb(24, 114, 64);
