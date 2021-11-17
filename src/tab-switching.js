@@ -20,7 +20,17 @@ const switchTabs = function() {
         tabPages[2].classList.remove("hidden");
         returnForm();
 	};
-}
+};
+
+/*const switchTabs = function() {
+	for (let i = 0; i < tabs.length; ++i) {
+		tabs[i].addEventListener("click", () => {
+			tabPages[i].classList.toggle("hidden");
+			returnForm();
+		});	
+		//tabPages[i].classList.add("hidden");
+	}
+};*/
 
 export {switchTabs};
 
