@@ -3,7 +3,7 @@ import {moveImage, removeImage, result} from './moveImage.js';
 import {loadElements, textBox} from './loadPage.js';
 import {switchTabs} from './tab-switching.js';
 
-window.onload = (e) => {
+window.onload = () => {
 	loadElements();
 	switchTabs(); 	
 };

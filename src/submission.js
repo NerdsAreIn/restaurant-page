@@ -29,7 +29,7 @@ function submitForm(e) {
 }
 
 function returnForm() {
-   	if (form.style.display == "none") {
+   	if (form.style.display === "none") {
 		tabPages[2].lastElementChild.remove();
 		resetForm();
     }

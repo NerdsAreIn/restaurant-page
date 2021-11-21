@@ -37,12 +37,11 @@ function checkNumber(requiredInput) {
 
 // TODO: Want to find a more elegant solution to counting the messages and making the submission contingent on there being none, but this just about works for now:
 function checkRequiredInputs(e) {
-    let inputRequiredMessage = createInputRequiredMessage(); 
-	requiredInputs = document.querySelectorAll("[required]");
+   	requiredInputs = document.querySelectorAll("[required]");
 	e.preventDefault();  
 	for (let i = 0; i < requiredInputs.length; i++) {  
 		if (requiredInputs[i].value == "" && requiredInputs[i].parentElement.children.length < 4) {				
-			requiredInputs[i].parentElement.appendChild(inputRequiredMessage);
+			requiredInputs[i].parentElement.appendChild(createInputRequiredMessage());
 			inputMessages[i] = 1; 			
 		}  
 		else if (requiredInputs[i].value != "")  {					

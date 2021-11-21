@@ -52,9 +52,10 @@ function createBanner() {
 	title.textContent = "Crocus Cafe";
 	banner.appendChild(title);
 	const navBar = document.createElement("nav");
-	navBar.appendChild(createListItems().list1);
-	navBar.appendChild(createListItems().list2);
-	navBar.appendChild(createListItems().list3);	
+    const listItems = createListItems();
+	navBar.appendChild(listItems.list1);
+	navBar.appendChild(listItems.list2);
+	navBar.appendChild(listItems.list3);	
 	banner.appendChild(navBar);
 	return banner;
 }
@@ -64,21 +65,18 @@ function createListItems() {
 	listItems.list1 = document.createElement("li");
 	listItems.list2 = document.createElement("li");
 	listItems.list3 = document.createElement("li");   
-	let list1 = listItems.list1;
-	let list2 = listItems.list2;
-	let list3 = listItems.list3;
-	list1.className = "nav-tab";
-	list2.className = "nav-tab";	
-	list3.className = "nav-tab";
-	list1.id = "about-tab";
-	list2.id = "menu-tab";
-	list3.id = "contact-tab";
-	list1.innerHTML = '<a href="#">About</a>';
-	list2.innerHTML = '<a href="#">Menu</a>';
-	list3.innerHTML = '<a href="#">Contact</a>';
-    tabs.push(list1);
-    tabs.push(list2);
-    tabs.push(list3);
+	listItems.list1.className = "nav-tab";
+	listItems.list2.className = "nav-tab";	
+	listItems.list3.className = "nav-tab";
+	listItems.list1.id = "about-tab";
+	listItems.list2.id = "menu-tab";
+	listItems.list3.id = "contact-tab";
+	listItems.list1.innerHTML = '<a href="#">About</a>';
+	listItems.list2.innerHTML = '<a href="#">Menu</a>';
+	listItems.list3.innerHTML = '<a href="#">Contact</a>';
+    tabs.push(listItems.list1);
+    tabs.push(listItems.list2);
+    tabs.push(listItems.list3);
 	return listItems;
 }
 
